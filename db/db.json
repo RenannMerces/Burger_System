@@ -1,0 +1,73 @@
+{
+    "ingredientes": {
+        "paes": [
+            {
+                "id": 1,
+                "tipo": "Pão de Hambúrguer"
+            },
+            {
+                "id": 2,
+                "tipo": "Pão de Hot Dog"
+            },
+            {
+                "id": 3,
+                "tipo": "Pão de Batata"
+            },
+            {
+                "id": 4,
+                "tipo": "Pão de Brioche"
+            }
+        ],
+        "carnes": [
+            {
+                "id": 1,
+                "tipo": "Hambúrguer de Carne"
+            },
+            {
+                "id": 2,
+                "tipo": "Hambúrguer de Frango"
+            },
+            {
+                "id": 3,
+                "tipo": "Hambúrguer de Peixe"
+            },
+            {
+                "id": 4,
+                "tipo": "Hambúrguer Vegetariano"
+            }
+        ],
+        "opcionais": [
+            {
+                "id": 1,
+                "tipo": "Queijo"
+            },
+            {
+                "id": 2,
+                "tipo": "Bacon"
+            },
+            {
+                "id": 3,
+                "tipo": "Alface"
+            },
+            {
+                "id": 4,
+                "tipo": "Tomate"
+            }
+        ]
+    },
+    "status": [
+        {
+            "id": 1,
+            "tipo": "Em produção"
+        },
+        {
+            "id": 2,
+            "tipo": "Pronto"
+        },
+        {
+            "id": 3,
+            "tipo": "Entregue"
+        }
+    ], 
+    "burgers": []
+}
