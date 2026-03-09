@@ -1,7 +1,7 @@
 <template>
     <div>
         <div>
-            <form id="burger-form">
+            <form id="burger-form" @submit="CreateBurger">
 
                 <div class="input-container">
                     <label for="name">Nome do Cliente: </label>
@@ -57,7 +57,6 @@
                 pao: null,
                 carne: null,
                 opcionais: [],
-                status: "Solicitado",
                 msg: null
             }
         },
@@ -92,6 +91,38 @@
                 } catch (error) {
                     console.error('Erro ao buscar opcionais:', error);
                 }
+            },
+
+            async CreateBurger(e){ // Função para criar o burger e enviar os dados para o backend
+
+                e.preventDefault(); // Evita o comportamento padrão do formulário
+
+                const data = {
+                    name: this.name,
+                    pao: this.pao,
+                    carne: this.carne,
+                    opcionais: Array.from(this.opcionais),
+                    status: "Solicitado"
+                }
+
+                const dataJson = JSON.stringify(data); // Converte os dados para JSON
+
+                const req = await fetch('http://localhost:3000/burgers', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: dataJson
+                });
+
+                const res = await req.json();
+
+                // colocar uma msg de sistema para o usuário, dizendo que o burger foi criado com sucesso ou se houve algum erro
+
+
+                // limpar os campos do formulário após o envio
+                this.name = "";
+                this.pao = "";
+                this.carne = "";
+                this.opcionais = "";
             }
         },
         mounted() {
