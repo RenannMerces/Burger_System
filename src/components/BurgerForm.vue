@@ -124,9 +124,7 @@ import MessageForm from './MessageForm.vue';
 
                 //limpar msg
 
-                setTimeout(() => {
-                    this.msg = null;
-                }, 5000);
+                setTimeout(() => {this.msg = null;}, 5000);
 
                 // limpar os campos do formulário após o envio
                 this.name = "";

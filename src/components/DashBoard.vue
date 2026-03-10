@@ -1,5 +1,6 @@
 <template>
     <div id="burger-table">
+        <MessageForm  :msg="msg" v-show="msg"/>
         <table>
             <thead id="burger-table-heading">
                 <tr>
@@ -32,7 +33,6 @@
                     <!-- Status -->
                     <td>
                         <select name="status" class="status" @change="updateBurger($event, burger.id)">
-                            <option value="">Selecione</option>
                             <option v-for="s in status" :key="s.id" :value="s.tipo" :selected="burger.status == s.tipo">
                                 {{s.tipo}}
                             </option>
@@ -50,6 +50,8 @@
 
 <script>
 
+import MessageForm from './MessageForm.vue';
+
 export default {
     name: "DashBoard",
     data(){
@@ -57,7 +59,10 @@ export default {
             burgers: null,
             burger_id: null,
             status: [],
+            msg: null
         }
+    },components: {
+            MessageForm
     },
     methods: {
         async getPedidos(){
@@ -86,6 +91,12 @@ export default {
             const res = await req.json();
 
             // msg
+            // colocar uma msg de sistema para o usuário, dizendo que o burger foi criado com sucesso ou se houve algum erro
+            this.msg = `Pedido removido com sucesso!`;
+
+            //limpar msg
+
+            setTimeout(() => {this.msg = null;}, 5000);
 
             this.getPedidos();
         },
@@ -100,6 +111,13 @@ export default {
             });
 
             const res = await req.json();
+
+                 // colocar uma msg de sistema para o usuário, dizendo que o burger foi criado com sucesso ou se houve algum erro
+            this.msg = `O pedido N° ${res.id} foi atualizado para ${res.status}`;
+
+            //limpar msg
+
+            setTimeout(() => {this.msg = null;}, 5000);
 
             console.log(res);
 

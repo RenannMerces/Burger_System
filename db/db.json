@@ -71,17 +71,6 @@
   ],
   "burgers": [
     {
-      "id": "76b6",
-      "name": "Bruno Mercês",
-      "pao": "Pão de Batata",
-      "carne": "Hambúrguer de Peixe",
-      "opcionais": [
-        "Queijo",
-        "Alface"
-      ],
-      "status": "Pronto"
-    },
-    {
       "id": "7f7a",
       "name": "Neymar Junior",
       "pao": "Pão de Hambúrguer",
@@ -92,7 +81,7 @@
         "Bacon",
         "Tomate"
       ],
-      "status": "Solicitado"
+      "status": "Pronto"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
