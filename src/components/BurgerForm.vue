@@ -132,7 +132,7 @@ import MessageForm from './MessageForm.vue';
                 this.name = "";
                 this.pao = "";
                 this.carne = "";
-                this.opcionais = "";
+                this.opcionais = "Solicitado";
             }
         },
         mounted() {
